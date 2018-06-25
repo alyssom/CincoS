@@ -11,10 +11,11 @@ export class AppComponent {
   title = 'app';
 
   
-    constructor(public afAuth: AngularFireAuth) {
+    constructor(public afAuth: AngularFireAuth, ) {
     }
     login() {
       this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+      
     }
     logout() {
       this.afAuth.auth.signOut();

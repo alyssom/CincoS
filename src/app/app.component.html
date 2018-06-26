@@ -10,10 +10,7 @@
 </head>
 
 <body class="text-center">
-    <div *ngIf="afAuth.user | async as user; else showLogin">
-        <h1>Hello {{ user.displayName }}!</h1>
-        <button (click)="logout()">Logout</button>
-      </div>
+    <router-outlet></router-outlet>
 
   <div class="container">
   <form class="form-signin">

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,11 @@ export class AppComponent {
   title = 'app';
 
   
-    constructor(public afAuth: AngularFireAuth, ) {
+    constructor(public afAuth: AngularFireAuth, private router: Router) {
     }
     login() {
       this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+      this.router.navigate(['home'])
       
     }
     logout() {

@@ -14,12 +14,5 @@ export class AppComponent {
   
     constructor(public afAuth: AngularFireAuth, private router: Router) {
     }
-    login() {
-      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-      this.router.navigate(['home'])
-      
-    }
-    logout() {
-      this.afAuth.auth.signOut();
-    }
+  
 }

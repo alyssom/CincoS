@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
 import { Router } from '@angular/router';
+import { GerenciadorDeUsuariosService } from '../gerenciador-de-usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -10,31 +11,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user;
-  constructor(public afAuth: AngularFireAuth, private router: Router) { }
+  constructor(public afAuth: AngularFireAuth, private router: Router, public service: GerenciadorDeUsuariosService) { }
 
   ngOnInit() {
   }
-  login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
-    .then(user => {
-        this.user = user;
-        console.log(this.user)
-      
-        if(this.user.user.displayName == "Alyssom Falkenberg"){
-          this.router.navigate(['home'])
-        }
-    }).catch(error => {
-
-      console.log(error.status);
-      console.log(error.error); // error message as string
-      console.log(error.headers);
-
-    });
-    
-    
+   
+  login(){
+    this.service.login();
   }
-  logout() {
-    this.afAuth.auth.signOut();
-  }
-
+  
+  
 }

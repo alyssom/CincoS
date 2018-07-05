@@ -1,3 +1,350 @@
-<p>
-  home works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Home</title>
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-secondary" id="page-top">
+ <app-navbar></app-navbar>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+      <!-- Icon Cards-->
+
+      
+      <div class="row" id="cards">
+
+
+      <div class="col-xl-12 col-sm-12 mb-12">
+          <div class="card text-white o-hidden h-100" style="background-color: forestgreen">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-comments"></i>
+              </div>
+              <div class="mr-5"><h1>Portaria</h1></div>
+              <div class="row">
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nome</th>
+                          <th scope="col">Idade</th>
+                          <th scope="col">Pontos</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let funcionario of portaria | async">
+                          <th >
+                            {{funcionario.nome}}
+                          </th>
+                          <th >
+                              {{funcionario.idade}}
+                            </th>
+                            <th >
+                                10
+                              </th>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-xl-12 col-sm-12 mb-12">
+            <div class="card text-white o-hidden h-100" style="background-color: tomato">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fa fa-fw fa-comments"></i>
+                </div>
+                <div class="mr-5"><h1>Recepção</h1></div>
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">Pontos</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let funcionario of recepcao | async">
+                            <th >
+                              {{funcionario.nome}}
+                            </th>
+                            <th >
+                                {{funcionario.idade}}
+                              </th>
+                              <th >
+                                  10
+                                </th>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-12 col-sm-12 mb-12">
+              <div class="card text-white bg-danger o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-fw fa-support"></i>
+                  </div>
+                  <div class="mr-5"><h1>Sala Vermelha</h1></div>
+                  <div class="row">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Nome</th>
+                              <th scope="col">Idade</th>
+                              <th scope="col">Pontos</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let funcionario of salaVermelha | async">
+                              <th >
+                                {{funcionario.nome}}
+                              </th>
+                              <th >
+                                  {{funcionario.idade}}
+                                </th>
+                                <th >
+                                    10
+                                  </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-sm-12 mb-12">
+                <div class="card text-white bg-warning o-hidden h-100">
+                  <div class="card-body">
+                    <div class="card-body-icon">
+                      <i class="fa fa-fw fa-list"></i>
+                    </div>
+                    <div class="mr-5"><h1>Sala Amarela</h1></div>
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Pontos</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let funcionario of salaAmarela | async">
+                                <th >
+                                  {{funcionario.nome}}
+                                </th>
+                                <th >
+                                    {{funcionario.idade}}
+                                  </th>
+                                  <th >
+                                      10
+                                    </th>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-xl-12 col-sm-12 mb-12">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-fw fa-comments"></i>
+                  </div>
+                  <div class="mr-5"><h1>Sala Azul</h1></div>
+                  <div class="row">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Nome</th>
+                              <th scope="col">Idade</th>
+                              <th scope="col">Pontos</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let funcionario of salaAzul | async">
+                              <th >
+                                {{funcionario.nome}}
+                              </th>
+                              <th >
+                                  {{funcionario.idade}}
+                                </th>
+                                <th >
+                                    10
+                                  </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-12 col-sm-12 mb-12">
+              <div class="card text-white o-hidden h-100" id="cardRoxo">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-fw fa-shopping-cart"></i>
+                  </div>
+                  <div class="mr-5"><h1>Sala Roxa</h1></div>
+                  <div class="row">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Nome</th>
+                              <th scope="col">Idade</th>
+                              <th scope="col">Pontos</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let funcionario of salaRoxa | async">
+                              <th >
+                                {{funcionario.nome}}
+                              </th>
+                              <th >
+                                  {{funcionario.idade}}
+                                </th>
+                                <th >
+                                    10
+                                  </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+      
+        
+        
+        
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <!-- Card Columns Example Social Feed-->
+          <div class="mb-0 mt-4" id="textoFuncionarios">
+            <i class="fa fa-newspaper-o"></i> Funcionários:</div>
+          <hr class="mt-2">
+          <div class="card-columns col-lg-12">
+            <!-- Example Social Card-->
+            <div class="card mb-3 lg-4">
+              <a href="#">
+                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
+              </a>
+              <div class="card-body">
+                <h6 class="card-title mb-1"><a href="#">Alyssom Falkenberg</a></h6>
+                <p class="card-text small">Desenvolvedor de Software.
+                </p>
+              </div>
+            </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3 lg-4">
+                <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title mb-1"><a href="#">Jonatas Fraga</a></h6>
+                  <p class="card-text small">Desenvolvedor de Software.
+                  </p>
+                </div>
+              </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3 lg-4">
+                <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title mb-1"><a href="#">Saimon Romero</a></h6>
+                  <p class="card-text small">Produtor Multimidia.
+                  </p>
+                </div>
+              </div>
+             <!-- Example Social Card-->
+             <div class="card mb-3 lg-4">
+                <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title mb-1"><a href="#">Anderson Rodrigues</a></h6>
+                  <p class="card-text small">Administrativo.
+                  </p>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center" id="footer">
+          <small>Copyright © CincoS 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.min.js"></script>
+  </div>
+</body>
+
+</html>

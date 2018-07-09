@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'cadastroFuncionarios', component: CadastroFuncionarioComponent }
   ];

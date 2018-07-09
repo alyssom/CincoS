@@ -53,7 +53,10 @@
                               {{funcionario.idade}}
                             </th>
                             <th >
-                                10
+                              <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
+                              {{funcionario.pontos}}
+                              <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
+                              <button class="btn btn-success" (click)="salvar()">Salvar</button>
                               </th>
                         </tr>
                       </tbody>
@@ -89,7 +92,10 @@
                                 {{funcionario.idade}}
                               </th>
                               <th >
-                                  10
+                                <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
+                                {{funcionario.pontos}}
+                                <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
+                                <button class="btn btn-success" (click)="salvar()">Salvar</button>
                                 </th>
                           </tr>
                         </tbody>
@@ -124,7 +130,10 @@
                                   {{funcionario.idade}}
                                 </th>
                                 <th >
-                                    10
+                                    <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
+                                    {{funcionario.pontos}}
+                                    <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
+                                    <button class="btn btn-success" (click)="salvar()">Salvar</button>
                                   </th>
                             </tr>
                           </tbody>
@@ -158,7 +167,10 @@
                                     {{funcionario.idade}}
                                   </th>
                                   <th >
-                                      10
+                                    <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
+                                    {{funcionario.pontos}}
+                                    <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
+                                    <button class="btn btn-success" (click)="salvar()">Salvar</button>
                                     </th>
                               </tr>
                             </tbody>
@@ -192,8 +204,10 @@
                                   {{funcionario.idade}}
                                 </th>
                                 <th >
-                                    10
-                                  </th>
+                                  <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
+                                  {{funcionario.pontos}}
+                                  <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
+                                  <button class="btn btn-success" (click)="salvar()">Salvar</button>    </th>
                             </tr>
                           </tbody>
                         </table>
@@ -227,7 +241,9 @@
                                   {{funcionario.idade}}
                                 </th>
                                 <th >
-                                    10
+                                  <button class="btn btn-primary" (click)="decrementa(funcionario)">-</button>
+                                  {{funcionario.pontos}}
+                                  <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
                                   </th>
                             </tr>
                           </tbody>
@@ -237,66 +253,6 @@
               </div>
             </div>
             
-      </div>
-      
-        
-        
-        
-      <div class="row">
-        <div class="col-lg-12">
-          
-          <!-- Card Columns Example Social Feed-->
-          <div class="mb-0 mt-4" id="textoFuncionarios">
-            <i class="fa fa-newspaper-o"></i> Funcionários:</div>
-          <hr class="mt-2">
-          <div class="card-columns col-lg-12">
-            <!-- Example Social Card-->
-            <div class="card mb-3 lg-4">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Alyssom Falkenberg</a></h6>
-                <p class="card-text small">Desenvolvedor de Software.
-                </p>
-              </div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3 lg-4">
-                <a href="#">
-                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
-                </a>
-                <div class="card-body">
-                  <h6 class="card-title mb-1"><a href="#">Jonatas Fraga</a></h6>
-                  <p class="card-text small">Desenvolvedor de Software.
-                  </p>
-                </div>
-              </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3 lg-4">
-                <a href="#">
-                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
-                </a>
-                <div class="card-body">
-                  <h6 class="card-title mb-1"><a href="#">Saimon Romero</a></h6>
-                  <p class="card-text small">Produtor Multimidia.
-                  </p>
-                </div>
-              </div>
-             <!-- Example Social Card-->
-             <div class="card mb-3 lg-4">
-                <a href="#">
-                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
-                </a>
-                <div class="card-body">
-                  <h6 class="card-title mb-1"><a href="#">Anderson Rodrigues</a></h6>
-                  <p class="card-text small">Administrativo.
-                  </p>
-                </div>
-              </div>
-
-          </div>
-        </div>
       </div>
     </div>
     <!-- /.container-fluid-->

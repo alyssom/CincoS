@@ -11,6 +11,7 @@ import { GerenciadorDeUsuariosService } from '../gerenciador-de-usuarios.service
 })
 export class LoginComponent implements OnInit {
   user;
+  public podeEntrar: boolean = false;
   constructor(public afAuth: AngularFireAuth, private router: Router, public service: GerenciadorDeUsuariosService) { }
 
   ngOnInit() {

@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="fixed-nav sticky-footer bg-secondary" id="page-top">
+<body class="fixed-nav sticky-footer " style="background-color: rgb(216, 210, 201)" id="page-top">
  <app-navbar></app-navbar>
   <div class="content-wrapper">
     <div class="container-fluid">
@@ -29,7 +29,7 @@
 
 
       <div class="col-xl-12 col-sm-12 mb-12">
-          <div class="card text-white o-hidden h-100" style="background-color: forestgreen">
+          <div class="card text-white o-hidden h-100" style="background-color:rgba(71, 221, 144, 0.714); padding-top: 20px;">
             <div class="card-body">
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-comments"></i>
@@ -42,6 +42,9 @@
                           <th scope="col">Nome</th>
                           <th scope="col">Idade</th>
                           <th scope="col">Pontos</th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -50,13 +53,60 @@
                             {{funcionario.nome}}
                           </th>
                           <th >
-                              {{funcionario.idade}}
+                              {{funcionario.email}}
                             </th>
                             <th >
-                              <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
-                              {{funcionario.pontos}}
-                              <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
-                              <button class="btn btn-success" (click)="salvar()">Salvar</button>
+                              Não Desperdicio: 
+                                <br>
+                                <br>
+                              Disciplina: 
+                              <br>
+                              <br>
+                              Organização: 
+                              <br>
+                              <br>
+                              Limpeza: 
+                              <br>
+                              <br>
+                              Funcionario Padrão: 
+                              <br>
+                              <br>
+                              Média do Funcionário:
+                              </th>
+                              <th>
+                                  <div>
+                                      <button class="btn btn-danger" (click)="decrementa(funcionario, 'desperdicio')">-</button>
+                                      {{funcionario.pontosDesperdicio}}
+                                      <button class="btn btn-primary" (click)="incrementa(funcionario, 'desperdicio')">+</button>
+                                  </div>
+                                  
+                                  <div style="margin-top: 5px">
+                                      <button class="btn btn-danger" (click)="decrementa(funcionario, 'disciplina')">-</button>
+                                      {{funcionario.pontosDisciplina}}
+                                      <button class="btn btn-primary" (click)="incrementa(funcionario, 'disciplina')">+</button>
+                                  </div>
+                                  
+                                  <div style="margin-top: 5px">
+                                      <button class="btn btn-danger" (click)="decrementa(funcionario, 'organizacao')">-</button>
+                                      {{funcionario.pontosOrganizacao}}
+                                      <button class="btn btn-primary" (click)="incrementa(funcionario, 'organizacao')">+</button>
+                                  </div>
+                                  <div style="margin-top: 5px">
+                                      <button class="btn btn-danger" (click)="decrementa(funcionario, 'limpeza')">-</button>
+                                      {{funcionario.pontosLimpeza}}
+                                      <button class="btn btn-primary" (click)="incrementa(funcionario, 'limpeza')">+</button>
+                                  </div>
+                                  <div style="margin-top: 5px">
+                                      <button class="btn btn-danger" (click)="decrementa(funcionario, 'padrao')">-</button>
+                                      {{funcionario.pontosPadrao}}
+                                      <button class="btn btn-primary" (click)="incrementa(funcionario, 'padrao')">+</button>
+                                  </div>
+                                  <br>
+                                  <p style="margin-left: 35px;">{{funcionario.mediaFuncionario}}</p>
+                                  
+                              </th>
+                              <th>
+                                  <button class="btn btn-success" (click)="salvar()" style="margin-top: 7px; margin-left: 7px;">Salvar</button>
                               </th>
                         </tr>
                       </tbody>
@@ -68,7 +118,7 @@
 
 
         <div class="col-xl-12 col-sm-12 mb-12">
-            <div class="card text-white o-hidden h-100" style="background-color: tomato">
+            <div class="card text-white o-hidden h-100" style="background-color:rgba(74, 221, 223, 0.721);">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fa fa-fw fa-comments"></i>
@@ -78,25 +128,74 @@
                     <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Idade</th>
-                            <th scope="col">Pontos</th>
+                              <th scope="col">Nome</th>
+                              <th scope="col">Idade</th>
+                              <th scope="col">Pontos</th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let funcionario of recepcao | async">
-                            <th >
-                              {{funcionario.nome}}
-                            </th>
-                            <th >
-                                {{funcionario.idade}}
-                              </th>
                               <th >
-                                <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
-                                {{funcionario.pontos}}
-                                <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
-                                <button class="btn btn-success" (click)="salvar()">Salvar</button>
+                                  {{funcionario.nome}}
                                 </th>
+                                <th >
+                                    {{funcionario.email}}
+                                  </th>
+                                  <th >
+                                    Não Desperdicio: 
+                                      <br>
+                                      <br>
+                                    Disciplina: 
+                                    <br>
+                                    <br>
+                                    Organização: 
+                                    <br>
+                                    <br>
+                                    Limpeza: 
+                                    <br>
+                                    <br>
+                                    Funcionario Padrão: 
+                                    <br>
+                                    <br>
+                                    Média do Funcionário:
+                                    </th>
+                                    <th>
+                                        <div>
+                                            <button class="btn btn-danger" (click)="decrementa(funcionario, 'desperdicio')">-</button>
+                                            {{funcionario.pontosDesperdicio}}
+                                            <button class="btn btn-primary" (click)="incrementa(funcionario, 'desperdicio')">+</button>
+                                        </div>
+                                        
+                                        <div style="margin-top: 5px">
+                                            <button class="btn btn-danger" (click)="decrementa(funcionario, 'disciplina')">-</button>
+                                            {{funcionario.pontosDisciplina}}
+                                            <button class="btn btn-primary" (click)="incrementa(funcionario, 'disciplina')">+</button>
+                                        </div>
+                                        
+                                        <div style="margin-top: 5px">
+                                            <button class="btn btn-danger" (click)="decrementa(funcionario, 'organizacao')">-</button>
+                                            {{funcionario.pontosOrganizacao}}
+                                            <button class="btn btn-primary" (click)="incrementa(funcionario, 'organizacao')">+</button>
+                                        </div>
+                                        <div style="margin-top: 5px">
+                                            <button class="btn btn-danger" (click)="decrementa(funcionario, 'limpeza')">-</button>
+                                            {{funcionario.pontosLimpeza}}
+                                            <button class="btn btn-primary" (click)="incrementa(funcionario, 'limpeza')">+</button>
+                                        </div>
+                                        <div style="margin-top: 5px">
+                                            <button class="btn btn-danger" (click)="decrementa(funcionario, 'padrao')">-</button>
+                                            {{funcionario.pontosPadrao}}
+                                            <button class="btn btn-primary" (click)="incrementa(funcionario, 'padrao')">+</button>
+                                        </div>
+                                        <br>
+                                        <p style="margin-left: 35px;">{{funcionario.mediaFuncionario}}</p>
+                                        
+                                    </th>
+                                    <th>
+                                        <button class="btn btn-success" (click)="salvar()" style="margin-top: 7px; margin-left: 7px;">Salvar</button>
+                                    </th>
                           </tr>
                         </tbody>
                       </table>
@@ -106,7 +205,7 @@
           </div>
 
           <div class="col-xl-12 col-sm-12 mb-12">
-              <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card text-white o-hidden h-100" style="background-color:rgba(221, 71, 71, 0.728);">
                 <div class="card-body">
                   <div class="card-body-icon">
                     <i class="fa fa-fw fa-support"></i>
@@ -116,25 +215,74 @@
                       <table class="table">
                           <thead>
                             <tr>
-                              <th scope="col">Nome</th>
-                              <th scope="col">Idade</th>
-                              <th scope="col">Pontos</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Pontos</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr *ngFor="let funcionario of salaVermelha | async">
-                              <th >
-                                {{funcionario.nome}}
-                              </th>
-                              <th >
-                                  {{funcionario.idade}}
-                                </th>
                                 <th >
-                                    <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
-                                    {{funcionario.pontos}}
-                                    <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
-                                    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+                                    {{funcionario.nome}}
                                   </th>
+                                  <th >
+                                      {{funcionario.email}}
+                                    </th>
+                                    <th >
+                                      Não Desperdicio: 
+                                        <br>
+                                        <br>
+                                      Disciplina: 
+                                      <br>
+                                      <br>
+                                      Organização: 
+                                      <br>
+                                      <br>
+                                      Limpeza: 
+                                      <br>
+                                      <br>
+                                      Funcionario Padrão: 
+                                      <br>
+                                      <br>
+                                      Média do Funcionário:
+                                      </th>
+                                      <th>
+                                          <div>
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'desperdicio')">-</button>
+                                              {{funcionario.pontosDesperdicio}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'desperdicio')">+</button>
+                                          </div>
+                                          
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'disciplina')">-</button>
+                                              {{funcionario.pontosDisciplina}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'disciplina')">+</button>
+                                          </div>
+                                          
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'organizacao')">-</button>
+                                              {{funcionario.pontosOrganizacao}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'organizacao')">+</button>
+                                          </div>
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'limpeza')">-</button>
+                                              {{funcionario.pontosLimpeza}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'limpeza')">+</button>
+                                          </div>
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'padrao')">-</button>
+                                              {{funcionario.pontosPadrao}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'padrao')">+</button>
+                                          </div>
+                                          <br>
+                                          <p style="margin-left: 35px;">{{funcionario.mediaFuncionario}}</p>
+                                          
+                                      </th>
+                                      <th>
+                                          <button class="btn btn-success" (click)="salvar()" style="margin-top: 7px; margin-left: 7px;">Salvar</button>
+                                      </th>
                             </tr>
                           </tbody>
                         </table>
@@ -143,7 +291,7 @@
               </div>
             </div>
             <div class="col-xl-12 col-sm-12 mb-12">
-                <div class="card text-white bg-warning o-hidden h-100">
+                <div class="card text-white o-hidden h-100" style="background-color:rgba(221, 219, 71, 0.721);">
                   <div class="card-body">
                     <div class="card-body-icon">
                       <i class="fa fa-fw fa-list"></i>
@@ -153,25 +301,74 @@
                         <table class="table">
                             <thead>
                               <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Idade</th>
-                                <th scope="col">Pontos</th>
+                                  <th scope="col">Nome</th>
+                                  <th scope="col">Idade</th>
+                                  <th scope="col">Pontos</th>
+                                  <th scope="col"></th>
+                                  <th scope="col"></th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr *ngFor="let funcionario of salaAmarela | async">
-                                <th >
-                                  {{funcionario.nome}}
-                                </th>
-                                <th >
-                                    {{funcionario.idade}}
-                                  </th>
                                   <th >
-                                    <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
-                                    {{funcionario.pontos}}
-                                    <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
-                                    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+                                      {{funcionario.nome}}
                                     </th>
+                                    <th >
+                                        {{funcionario.email}}
+                                      </th>
+                                      <th >
+                                        Não Desperdicio: 
+                                          <br>
+                                          <br>
+                                        Disciplina: 
+                                        <br>
+                                        <br>
+                                        Organização: 
+                                        <br>
+                                        <br>
+                                        Limpeza: 
+                                        <br>
+                                        <br>
+                                        Funcionario Padrão: 
+                                        <br>
+                                        <br>
+                                        Média do Funcionário:
+                                        </th>
+                                        <th>
+                                            <div>
+                                                <button class="btn btn-danger" (click)="decrementa(funcionario, 'desperdicio')">-</button>
+                                                {{funcionario.pontosDesperdicio}}
+                                                <button class="btn btn-primary" (click)="incrementa(funcionario, 'desperdicio')">+</button>
+                                            </div>
+                                            
+                                            <div style="margin-top: 5px">
+                                                <button class="btn btn-danger" (click)="decrementa(funcionario, 'disciplina')">-</button>
+                                                {{funcionario.pontosDisciplina}}
+                                                <button class="btn btn-primary" (click)="incrementa(funcionario, 'disciplina')">+</button>
+                                            </div>
+                                            
+                                            <div style="margin-top: 5px">
+                                                <button class="btn btn-danger" (click)="decrementa(funcionario, 'organizacao')">-</button>
+                                                {{funcionario.pontosOrganizacao}}
+                                                <button class="btn btn-primary" (click)="incrementa(funcionario, 'organizacao')">+</button>
+                                            </div>
+                                            <div style="margin-top: 5px">
+                                                <button class="btn btn-danger" (click)="decrementa(funcionario, 'limpeza')">-</button>
+                                                {{funcionario.pontosLimpeza}}
+                                                <button class="btn btn-primary" (click)="incrementa(funcionario, 'limpeza')">+</button>
+                                            </div>
+                                            <div style="margin-top: 5px">
+                                                <button class="btn btn-danger" (click)="decrementa(funcionario, 'padrao')">-</button>
+                                                {{funcionario.pontosPadrao}}
+                                                <button class="btn btn-primary" (click)="incrementa(funcionario, 'padrao')">+</button>
+                                            </div>
+                                            <br>
+                                            <p style="margin-left: 35px;">{{funcionario.mediaFuncionario}}</p>
+                                            
+                                        </th>
+                                        <th>
+                                            <button class="btn btn-success" (click)="salvar()" style="margin-top: 7px; margin-left: 7px;">Salvar</button>
+                                        </th>
                               </tr>
                             </tbody>
                           </table>
@@ -180,7 +377,7 @@
                 </div>
               </div>
             <div class="col-xl-12 col-sm-12 mb-12">
-              <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card text-white o-hidden h-100" style="background-color:rgba(98, 71, 221, 0.735);">
                 <div class="card-body">
                   <div class="card-body-icon">
                     <i class="fa fa-fw fa-comments"></i>
@@ -190,24 +387,74 @@
                       <table class="table">
                           <thead>
                             <tr>
-                              <th scope="col">Nome</th>
-                              <th scope="col">Idade</th>
-                              <th scope="col">Pontos</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Pontos</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr *ngFor="let funcionario of salaAzul | async">
-                              <th >
-                                {{funcionario.nome}}
-                              </th>
-                              <th >
-                                  {{funcionario.idade}}
-                                </th>
                                 <th >
-                                  <button class="btn btn-danger" (click)="decrementa(funcionario)">-</button>
-                                  {{funcionario.pontos}}
-                                  <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
-                                  <button class="btn btn-success" (click)="salvar()">Salvar</button>    </th>
+                                    {{funcionario.nome}}
+                                  </th>
+                                  <th >
+                                      {{funcionario.email}}
+                                    </th>
+                                    <th >
+                                      Não Desperdicio: 
+                                        <br>
+                                        <br>
+                                      Disciplina: 
+                                      <br>
+                                      <br>
+                                      Organização: 
+                                      <br>
+                                      <br>
+                                      Limpeza: 
+                                      <br>
+                                      <br>
+                                      Funcionario Padrão: 
+                                      <br>
+                                      <br>
+                                      Média do Funcionário:
+                                      </th>
+                                      <th>
+                                          <div>
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'desperdicio')">-</button>
+                                              {{funcionario.pontosDesperdicio}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'desperdicio')">+</button>
+                                          </div>
+                                          
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'disciplina')">-</button>
+                                              {{funcionario.pontosDisciplina}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'disciplina')">+</button>
+                                          </div>
+                                          
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'organizacao')">-</button>
+                                              {{funcionario.pontosOrganizacao}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'organizacao')">+</button>
+                                          </div>
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'limpeza')">-</button>
+                                              {{funcionario.pontosLimpeza}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'limpeza')">+</button>
+                                          </div>
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'padrao')">-</button>
+                                              {{funcionario.pontosPadrao}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'padrao')">+</button>
+                                          </div>
+                                          <br>
+                                          <p style="margin-left: 35px;">{{funcionario.mediaFuncionario}}</p>
+                                          
+                                      </th>
+                                      <th>
+                                          <button class="btn btn-success" (click)="salvar()" style="margin-top: 7px; margin-left: 7px;">Salvar</button>
+                                      </th>
                             </tr>
                           </tbody>
                         </table>
@@ -217,7 +464,7 @@
             </div>
             
             <div class="col-xl-12 col-sm-12 mb-12">
-              <div class="card text-white o-hidden h-100" id="cardRoxo">
+              <div class="card text-white o-hidden h-100" style="background-color:rgba(177, 62, 181, 0.804);">
                 <div class="card-body">
                   <div class="card-body-icon">
                     <i class="fa fa-fw fa-shopping-cart"></i>
@@ -227,24 +474,74 @@
                       <table class="table">
                           <thead>
                             <tr>
-                              <th scope="col">Nome</th>
-                              <th scope="col">Idade</th>
-                              <th scope="col">Pontos</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Pontos</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr *ngFor="let funcionario of salaRoxa | async">
-                              <th >
-                                {{funcionario.nome}}
-                              </th>
-                              <th >
-                                  {{funcionario.idade}}
-                                </th>
                                 <th >
-                                  <button class="btn btn-primary" (click)="decrementa(funcionario)">-</button>
-                                  {{funcionario.pontos}}
-                                  <button class="btn btn-primary" (click)="incrementa(funcionario)">+</button>
+                                    {{funcionario.nome}}
                                   </th>
+                                  <th >
+                                      {{funcionario.email}}
+                                    </th>
+                                    <th >
+                                      Não Desperdicio: 
+                                        <br>
+                                        <br>
+                                      Disciplina: 
+                                      <br>
+                                      <br>
+                                      Organização: 
+                                      <br>
+                                      <br>
+                                      Limpeza: 
+                                      <br>
+                                      <br>
+                                      Funcionario Padrão: 
+                                      <br>
+                                      <br>
+                                      Média do Funcionário:
+                                      </th>
+                                      <th>
+                                          <div>
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'desperdicio')">-</button>
+                                              {{funcionario.pontosDesperdicio}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'desperdicio')">+</button>
+                                          </div>
+                                          
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'disciplina')">-</button>
+                                              {{funcionario.pontosDisciplina}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'disciplina')">+</button>
+                                          </div>
+                                          
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'organizacao')">-</button>
+                                              {{funcionario.pontosOrganizacao}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'organizacao')">+</button>
+                                          </div>
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'limpeza')">-</button>
+                                              {{funcionario.pontosLimpeza}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'limpeza')">+</button>
+                                          </div>
+                                          <div style="margin-top: 5px">
+                                              <button class="btn btn-danger" (click)="decrementa(funcionario, 'padrao')">-</button>
+                                              {{funcionario.pontosPadrao}}
+                                              <button class="btn btn-primary" (click)="incrementa(funcionario, 'padrao')">+</button>
+                                          </div>
+                                          <br>
+                                          <p style="margin-left: 35px;">{{funcionario.mediaFuncionario}}</p>
+                                          
+                                      </th>
+                                      <th>
+                                          <button class="btn btn-success" (click)="salvar()" style="margin-top: 7px; margin-left: 7px;">Salvar</button>
+                                      </th>
                             </tr>
                           </tbody>
                         </table>

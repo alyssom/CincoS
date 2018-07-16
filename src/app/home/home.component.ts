@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
    public salaAmarela: Observable<any[]>;
    public salaAzul: Observable<any[]>;
    public salaRoxa: Observable<any[]>;
-
+    
   constructor(public service: GerenciadorDeUsuariosService, public router: Router, public db: AngularFirestore) {
    
     
@@ -41,30 +41,55 @@ export class HomeComponent implements OnInit {
   }
 
   funcionario;
-  decrementa(funcionario){
-    funcionario.pontos--;
+  decrementa(funcionario, tipo){
+    if(tipo == "desperdicio"){
+      funcionario.pontosDesperdicio--;
+    }else if(tipo == "disciplina"){
+      funcionario.pontosDisciplina--;
+    }else if(tipo == "organizacao"){
+      funcionario.pontosOrganizacao--;
+    }else if(tipo == "limpeza"){
+      funcionario.pontosLimpeza--;
+    }else if(tipo == "padrao"){
+      funcionario.pontosPadrao--;
+    }
     this.funcionario = funcionario;
     
   }
 
-  incrementa(funcionario){
-    if(funcionario.pontos < 100){
-    funcionario.pontos++;
-    this.funcionario = funcionario;
-    }
+  incrementa(funcionario, tipo){
+    
+      if(tipo == "desperdicio"){
+        funcionario.pontosDesperdicio++;
+      }else if(tipo == "disciplina"){
+        funcionario.pontosDisciplina++;
+      }else if(tipo == "organizacao"){
+        funcionario.pontosOrganizacao++;
+      }else if(tipo == "limpeza"){
+        funcionario.pontosLimpeza++;
+      }else if(tipo == "padrao"){
+        funcionario.pontosPadrao++;
+      }
+      this.funcionario = funcionario;
     
   }
   salvar(){
     if(this.funcionario != undefined){
 
     let nome = this.funcionario.nome;
-    let pontos = this.funcionario.pontos;
+    let pontosDesperdicio = this.funcionario.pontosDesperdicio;
+    let pontosDisciplina = this.funcionario.pontosDisciplina;
+    let pontosOrganizacao = this.funcionario.pontosOrganizacao;
+    let pontosLimpeza = this.funcionario.pontosLimpeza;
+    let pontosPadrao = this.funcionario.pontosPadrao;
     let id = this.funcionario.id;
     let cargo = this.funcionario.cargo;
     let email = this.funcionario.email;
     let sala = this.funcionario.sala;
     let idade = this.funcionario.idade;
-    let item = {id, nome, pontos, cargo, email, sala, idade}; 
+    let mediaFuncionario = (pontosDesperdicio + pontosDisciplina + pontosLimpeza + pontosOrganizacao + pontosPadrao) / 5;
+
+    let item = {id, nome, pontosDesperdicio, pontosDisciplina, pontosOrganizacao, pontosLimpeza, pontosPadrao, mediaFuncionario, cargo, email, sala, idade}; 
     this.db.collection('funcionarios', ref => ref.where('id', '==', this.funcionario.id)).doc(this.funcionario.id).set(item)
 
     }    
